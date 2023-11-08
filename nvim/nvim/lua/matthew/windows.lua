@@ -1,0 +1,6 @@
+vim.opt.shell = 'powershell'
+vim.opt.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy Remotesigned -Command -NonInteractive'
+vim.opt.shellxquote = ''
+vim.opt.shellquote = ''
+vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
+vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s'
