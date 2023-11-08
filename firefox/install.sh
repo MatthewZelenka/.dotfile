@@ -47,7 +47,7 @@ elif [[ "$OSTYPE" == "msys" ]]; then
     /c/Program\ Files/Mozilla\ Firefox/firefox.exe -P
     read -n 1 -s -r -p "Press any key to continue"
     echo
-    ln -sf "$PWD\\savedProfile\\*" "$PWD\\dotfiles\\" 
+    ln -sf $PWD/savedProfile/* $PWD/dotfiles/
 elif [[ "$OSTYPE" == "win32" ]]; then
     # I'm not sure this can happen.
     echo $OSTYPE
