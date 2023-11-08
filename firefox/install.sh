@@ -42,7 +42,7 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     echo $OSTYPE
 elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-    mklink $PWD/savedProfile/* $PWD/dotfiles/
+    ln -sf "$PWD\\savedProfile\\*" "$PWD\\dotfiles\\" 
 elif [[ "$OSTYPE" == "win32" ]]; then
     # I'm not sure this can happen.
     echo $OSTYPE

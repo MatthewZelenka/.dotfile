@@ -28,7 +28,7 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     echo $OSTYPE
 elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-    mklink "$PWD/nvim" "C:/Users/%USERPROFILE%/AppData/Local/nvim/"
+    ln -sf "$PWD\\nvim" "$USERPROFILE\\AppData\\Local\\" 
 elif [[ "$OSTYPE" == "win32" ]]; then
     # I'm not sure this can happen.
     echo $OSTYPE
