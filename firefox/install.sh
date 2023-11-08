@@ -18,7 +18,7 @@ elif command -v pacman &> /dev/null; then
     sudo pacman -S firefox
 elif command -v winget &> /dev/null; then
     winget install -e --id Mozilla.Firefox
-    firefoxPath="/c/Program Files/Mozilla Firefox/firefox.exe"
+    firefoxPath="/c/Program\ Files/Mozilla Firefox/firefox.exe"
 else
     echo "Unknown package manager or not installed"
 fi
