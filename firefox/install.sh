@@ -42,7 +42,7 @@ elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
     # create firefox profile
     mkdir "$PWD/dotfiles" 
-    /c/Program\ Files/Mozilla\ Firefox/firefox.exe -CreateProfile "$name $PWD/dotfiles"
+    /c/Program\ Files/Mozilla\ Firefox/firefox.exe -CreateProfile "$name $(cmd //c cd)/dotfiles"
     echo "Select custom profile"
     /c/Program\ Files/Mozilla\ Firefox/firefox.exe -P
     read -n 1 -s -r -p "Press any key to continue"
