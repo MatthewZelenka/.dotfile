@@ -6,8 +6,6 @@ name="Matthew"
 
 # end
 
-firefoxPath="firefox"
-
 # install the program
 # firefox
 if command -v apt-get &> /dev/null; then
@@ -18,21 +16,21 @@ elif command -v pacman &> /dev/null; then
     sudo pacman -S firefox
 elif command -v winget &> /dev/null; then
     winget install -e --id Mozilla.Firefox
-    firefoxPath="/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 else
     echo "Unknown package manager or not installed"
 fi
 
-# create firefox profile
-eval "$firefoxPath -CreateProfile \"$name $PWD/dotfiles\""
-echo "Select custom profile"
-eval "$firefoxPath -P"
-read -n 1 -s -r -p "Press any key to continue"
-echo
+
 
 # symbolic-link of config
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # linux
+    # create firefox profile
+    firefox -CreateProfile \"$name $PWD/dotfiles\"
+    echo "Select custom profile"
+    firefox -P
+    read -n 1 -s -r -p "Press any key to continue"
+    echo
     ln -sf $PWD/savedProfile/* $PWD/dotfiles/
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
@@ -42,6 +40,15 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     echo $OSTYPE
 elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+    ""
+    # create firefox profile
+    mkdir $PWD/dotfiles 
+    /c/Program\ Files/Mozilla\ Firefox/firefox.exe -CreateProfile "$name $PWD/dotfiles"
+    echo "Select custom profile"
+    /c/Program\ Files/Mozilla\ Firefox/firefox.exe -P
+    read -n 1 -s -r -p "Press any key to continue"
+    echo
+    ln -sf $PWD/savedProfile/* $PWD/dotfiles/
     ln -sf "$PWD\\savedProfile\\*" "$PWD\\dotfiles\\" 
 elif [[ "$OSTYPE" == "win32" ]]; then
     # I'm not sure this can happen.
