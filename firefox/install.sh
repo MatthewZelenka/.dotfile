@@ -40,9 +40,8 @@ elif [[ "$OSTYPE" == "cygwin" ]]; then
     echo $OSTYPE
 elif [[ "$OSTYPE" == "msys" ]]; then
     # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
-    ""
     # create firefox profile
-    mkdir $PWD/dotfiles 
+    mkdir "$PWD/dotfiles" 
     /c/Program\ Files/Mozilla\ Firefox/firefox.exe -CreateProfile "$name $PWD/dotfiles"
     echo "Select custom profile"
     /c/Program\ Files/Mozilla\ Firefox/firefox.exe -P
