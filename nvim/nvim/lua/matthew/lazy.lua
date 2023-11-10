@@ -56,7 +56,12 @@ require("lazy").setup(
         },
 
         -- Tree style error messages
-        'ErichDonGubler/lsp_lines.nvim',
+        {
+            url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+            config = function()
+                require("lsp_lines").setup()
+            end
+        },
 
         -- Highlight, edit, and navigate code
         {
