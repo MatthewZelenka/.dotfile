@@ -68,8 +68,6 @@ require("lazy").setup(
             'nvim-treesitter/nvim-treesitter',
             dependencies = {
                 'nvim-treesitter/nvim-treesitter-textobjects',
-                -- Treesitter exstension
-                'nvim-treesitter/playground',
             },
             build = ':TSUpdate',
         },
@@ -82,10 +80,10 @@ require("lazy").setup(
 
         -- Color scheme
         {
-            'rose-pine/neovim',
-            name = 'rose-pine',
+            'scottmckendry/cyberdream.nvim',
+            name = 'cyberdream',
             config = function()
-                vim.cmd('colorscheme rose-pine')
+                vim.cmd('colorscheme cyberdream')
             end
         }
     }
