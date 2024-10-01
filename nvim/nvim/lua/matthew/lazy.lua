@@ -73,7 +73,7 @@ require("lazy").setup(
         },
 
         -- Undo your mistakes with branchs
-        'mbbill/undotree',
+    'mbbill/undotree',
 
         -- Fancy tabs lol
         'theprimeagen/harpoon',
@@ -85,6 +85,29 @@ require("lazy").setup(
             config = function()
                 vim.cmd('colorscheme cyberdream')
             end
-        }
+        },
+
+        -- DAP Core Plugin
+        {
+            "nvim-neotest/nvim-nio",
+    	},
+
+	-- DAP Core Plugin
+        {
+            "mfussenegger/nvim-dap",
+            dependencies = { "nvim-neotest/nvim-nio" },
+    	},
+
+        -- DAP UI Plugin
+        {
+            "rcarriga/nvim-dap-ui",
+            dependencies = { "mfussenegger/nvim-dap" },
+        },
+
+        -- Optional: Adds virtual text to DAP
+        {
+            "theHamsta/nvim-dap-virtual-text",
+            dependencies = { "mfussenegger/nvim-dap" },
+        },
     }
 )
